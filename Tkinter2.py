@@ -14,6 +14,7 @@ class WordRecg(tk.Frame):
         self.grid(row=0, column=0, columnspan=2) 
         self.row_ind=1  
         self.create00_top_frame()
+        
         self.create01_func_frame()
 
         
