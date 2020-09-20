@@ -14,14 +14,13 @@ def load_data():
     mnist = fetch_openml('mnist_784', version=1)
     print('Data load successfuly ...')
     print(mnist.keys())
-    return 
-# mnist=load_data()
+    return mnist
     
 def show_data_info(mnist):
-    # X, y = mnist["data"], mnist["target"]
-    # X.shape
-    # y.shape
-    str1='There are '+str(123)+' training examples.'
+    X, y = mnist["data"], mnist["target"]
+    X.shape
+    sample_num=y.shape
+    str1='There are '+str(sample_num)+' training examples.'
     messages=tk.Toplevel()
     messages.minsize(width=100, height=100)
     messages.title('Data information:')
@@ -29,7 +28,7 @@ def show_data_info(mnist):
     canvas = tk.Canvas(messages, width=400, height=400)
     
     canvas.grid(row=1, column=0)
-    img=tk.PhotoImage(file='WR.png')
+    img=tk.PhotoImage(file='images\WR.png')
     width, height=380,391
     canvas.create_image(width/2, height/2,image=img, anchor='center')
     canvas.image = img
@@ -37,8 +36,9 @@ def show_data_info(mnist):
 
 def load_data_act():
     global mnist
-    mnist=[1,2]
-    # load_data()
+    mnist=load_data()
     show_data_info(mnist)
+    
+
 
 
